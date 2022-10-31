@@ -52,4 +52,34 @@ public class PathUtilsTester {
         else return true;
     }
 
+    public static void main(String[] args) {
+        try (Scanner keyboard = new Scanner(System.in)) {
+            int startX, startY, endX, endY;
+            String input = "Y";
+            while (input.equalsIgnoreCase("Y")) {
+                System.out.print("Enter starting X coordinate: ");
+                startX = keyboard.nextInt();
+                System.out.print("Enter starting Y coordinate: ");
+                startY = keyboard.nextInt();
+                System.out.print("Enter ending X coordinate: ");
+                endX = keyboard.nextInt();
+                System.out.print("Enter ending Y coordinate: ");
+                endY = keyboard.nextInt();
+                Intersection start = new Intersection(startX, startY);
+                Intersection end = new Intersection(endX, endY);
+                System.out.println("Number of paths from start to end: "
+                    + PathUtils.countPaths(start, end));
+                System.out.println("List of possible paths:");
+                for (Path p : PathUtils.findAllPaths(start, end)) {
+                    System.out.println(p);
+                }
+                do {
+                    System.out.print("Try another route? (Y/N): ");
+                    input = keyboard.next();
+                } while (!input.equalsIgnoreCase("Y")
+                    && !input.equalsIgnoreCase("N"));
+            }
+        }
+    }
+
 }
