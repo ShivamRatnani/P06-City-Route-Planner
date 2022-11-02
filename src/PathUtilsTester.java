@@ -55,8 +55,8 @@ public class PathUtilsTester {
     public static void main(String[] args) {
         try (Scanner keyboard = new Scanner(System.in)) {
             int startX, startY, endX, endY;
-            String input = "Y";
-            while (input.equalsIgnoreCase("Y")) {
+            String scanner = "Y";
+            while (scanner.equalsIgnoreCase("Y")) {
                 System.out.print("Enter starting X coordinate: ");
                 startX = keyboard.nextInt();
                 System.out.print("Enter starting Y coordinate: ");
@@ -75,9 +75,9 @@ public class PathUtilsTester {
                 }
                 do {
                     System.out.print("Try another route? (Y/N): ");
-                    input = keyboard.next();
-                } while (!input.equalsIgnoreCase("Y")
-                    && !input.equalsIgnoreCase("N"));
+                    scanner = keyboard.next();
+                } while (!scanner.equalsIgnoreCase("Y")
+                    && !scanner.equalsIgnoreCase("N"));
             }
         }
     }

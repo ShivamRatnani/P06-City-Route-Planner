@@ -30,24 +30,25 @@ public class PathUtils {
         //need to do this recursively
 
         ArrayList<Path> allPaths = new ArrayList<>();
-        if (countPaths(start, end) == 0) return allPaths;
+        if (countPaths(start, end) == 0)
+            return allPaths;
         else if (countPaths(start, end) == 1) {
             allPaths.add(new Path(start, end));
-        }
-        else {
+        } else {
             for (int i = 0; i < countPaths(start, end); i++) {
 
             }
 
 
-            }
-        return allPaths;
         }
-
-
-
+        return allPaths;
     }
 
 
 
 }
+
+
+
+
+
